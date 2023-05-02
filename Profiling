@@ -1,0 +1,23 @@
+import pandas as pd
+
+data = {'A': [10, 20, 30, 40, 50],
+        'B': [5, 10, 15, 20, 25]}
+
+df = pd.DataFrame(data)
+print("Original DataFrame:")
+print(df)
+
+column_A_mean = df['A'].mean()
+column_A_std = df['A'].std()
+
+column_B_mean = df['B'].mean()
+column_B_std = df['B'].std()
+
+df['A_standardized'] = (df['A'] - column_A_mean) / column_A_std
+print("DataFrame with Standardized Column:")
+print(df)
+
+
+df['B_standardized'] = (df['B'] - column_B_mean) / column_B_std
+print("DataFrame with Standardized Column:")
+print(df)
